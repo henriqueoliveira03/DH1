@@ -1,0 +1,19 @@
+--
+-- File generated with SQLiteStudio v3.4.15 on ter fev 4 21:44:44 2025
+--
+-- Text encoding used: System
+--
+PRAGMA foreign_keys = off;
+BEGIN TRANSACTION;
+
+-- Table: Cliente
+CREATE TABLE IF NOT EXISTS Cliente (Código INTEGER CONSTRAINT PK_Cliente PRIMARY KEY ASC AUTOINCREMENT NOT NULL, Nome TEXT NOT NULL, "CPF/CNPJ" TEXT UNIQUE, Endereço TEXT, Telefone NUMERIC, Email TEXT);
+
+-- Table: Produto
+CREATE TABLE IF NOT EXISTS Produto (Código INTEGER CONSTRAINT PK_Produto PRIMARY KEY ASC AUTOINCREMENT NOT NULL, Nome TEXT NOT NULL, Descrição TEXT, Tipo TEXT, "Código de Barra" NUMERIC NOT NULL, Preço NUMERIC NOT NULL);
+
+-- Table: Vendedor
+CREATE TABLE IF NOT EXISTS Vendedor (Código INTEGER CONSTRAINT PK_Vendedor PRIMARY KEY ASC AUTOINCREMENT NOT NULL, Nome TEXT NOT NULL, Telefone NUMERIC, Email TEXT);
+
+COMMIT TRANSACTION;
+PRAGMA foreign_keys = on;
